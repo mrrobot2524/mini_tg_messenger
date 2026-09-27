@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input, Button } from '@/shared'
@@ -30,7 +31,7 @@ export function CreateChatForm({ onSuccess }: CreateChatFormProps) {
     },
   })
 
-  const onSubmit = (data: CreateChatValues) => {
+  const onSubmit = useCallback((data: CreateChatValues) => {
     const existingChats = useChatStore.getState().chats
     const existing = existingChats.find((c) => c.id === data.phone)
 
@@ -45,7 +46,6 @@ export function CreateChatForm({ onSuccess }: CreateChatFormProps) {
     const newChat: Chat = {
       id: data.phone,
       name: data.name || data.phone,
-      status: '',
       lastMessage: '',
       lastMessageDate: Date.now(),
     }
@@ -53,7 +53,7 @@ export function CreateChatForm({ onSuccess }: CreateChatFormProps) {
     addChat(newChat)
     selectChat(newChat.id)
     onSuccess()
-  }
+  }, [addChat, selectChat, setError, onSuccess])
 
   return (
     <form

@@ -68,7 +68,7 @@ export function useSendMessage() {
       return { optimisticMessage }
     },
 
-    onSuccess: (data, variables, context) => {
+    onSuccess: (data, _variables, context) => {
       if (context?.optimisticMessage && data.idMessage) {
         const store = useChatStore.getState()
         const msgs = store.messagesByChat[context.optimisticMessage.chatId] ?? []

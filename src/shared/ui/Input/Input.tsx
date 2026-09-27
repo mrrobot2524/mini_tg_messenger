@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string
   error?: string
   children?: ReactNode

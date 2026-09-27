@@ -3,10 +3,9 @@ import { type Message } from '@/entities/chat'
 
 type MessageListProps = {
   messages: Message[]
-  chatId: string | null
 }
 
-export function MessageList({ messages, chatId }: MessageListProps) {
+export function MessageList({ messages }: MessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

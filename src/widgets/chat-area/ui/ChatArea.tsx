@@ -44,7 +44,7 @@ export function ChatArea({
         </div>
       </header>
 
-       <MessageList messages={messages} chatId={chat.id} />
+       <MessageList messages={messages} />
 
       <MessageInput onSend={onSendMessage} disabled={isSending} />
     </div>

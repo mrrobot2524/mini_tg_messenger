@@ -77,7 +77,7 @@ export function CreateChatForm({ onSuccess }: CreateChatFormProps) {
       />
 
       <div className="flex gap-2">
-        <Button type="button" variant="secondary" onClick={onSuccess}>
+        <Button type="button" variant="secondary" onClick={onSuccess} className='px-4 py-2'>
           Отмена
         </Button>
         <Button type="submit" className="flex-1">

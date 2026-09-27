@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/green-api/(.*)",
+      "destination": "https://api.green-api.com/$1"
+    }
+  ]
+}
